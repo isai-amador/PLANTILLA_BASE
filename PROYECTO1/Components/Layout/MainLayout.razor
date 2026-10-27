@@ -1,0 +1,85 @@
+﻿@inherits LayoutComponentBase
+
+<header>
+    <div class="left">
+        <div class="menu-container" @onclick="ToggleSidebar">
+            <div class="menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="brand">
+            <span class="name">UNAH</span>
+            <span class="divisor"></span>
+            <span class="subtitulo ms-3">Programación Aplicada</span>
+        </div>
+    </div>
+
+    <div class="right">
+        <a href="#">
+            <img src="img/comentario.png" alt="x" />
+        </a>
+        <a href="#">
+            <img src="img/notificacion.png" alt="x" />
+        </a>
+        <a href="#">
+            <img src="img/pregunta.png" alt="x" />
+        </a>
+        <div class="dropdown">
+            <img src="img/user.png" class="user" role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false" />
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+        </div>
+
+    </div>
+</header>
+
+<div class="sidebar @(isExpanded ? "menu-toggle" : "")">
+    <nav>
+        <ul>
+            <li>
+                <a href="/" class="selected">
+                    <img src="img/pagina-de-inicio.png" alt="Alternate Text" />
+                    <span>Inicio</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="PA Semana 4 - XML JSON SOAP - Parte 1.pdf" target="_blank" rel="noopener noreferrer" class="search">
+                    <img src="img/material-de-aprendizaje.png" alt="Contenido de la semana" />
+                    <span>Recursos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/" class="search">
+                    <img src="img/tarea.png" alt="Alternate Text" />
+                    <span>Ejercicio4</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Calculadora" class="search">
+                    <img src="img/tarea.png" alt="Alternate Text" />
+                    <span>Ejercicio5 - Calculadora</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<main class=" content @(isExpanded ? "shifted" : "")">
+    @Body
+</main>
+
+@code {
+    private bool isExpanded = true;
+
+    private void ToggleSidebar()
+    {
+        isExpanded = !isExpanded;
+    }
+}

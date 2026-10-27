@@ -1,0 +1,15 @@
+/* CSS for Home component */
+.divisor {
+    width: 10px;
+    background-color: #ffd800ff;
+}
+
+.card-header{
+    background-color:#1942baff;
+    color:#ffffff
+}
+
+.btn {
+    background-color: #1942baff;
+    color: #ffffff
+}
